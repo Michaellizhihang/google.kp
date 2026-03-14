@@ -1,0 +1,541 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+    <TITLE>Google 朝鲜特供版 - Juche Search</TITLE>
+    <META NAME="keywords" CONTENT="主体思想,朝鲜,金日成,金正日,金正恩">
+    <META NAME="description" CONTENT="主体思想搜索引擎 - 朝鲜民主主义人民共和国官方搜索">
+    <STYLE TYPE="text/css">
+        /* IE4兼容的基础样式 */
+        BODY {
+            font-family: "宋体", SimSun, serif;
+            background-color: #8B0000;
+            margin: 0;
+            padding: 0;
+            color: #FFFFFF;
+            text-align: center;
+        }
+
+        /* 顶部标语栏 */
+        .top-banner {
+            background-color: #8B0000;
+            border-bottom: 4px solid #FFD700;
+            padding: 5px;
+            overflow: hidden;
+            height: 20px;
+        }
+        .marquee-text {
+            color: #FFD700;
+            font-size: 12px;
+            white-space: nowrap;
+        }
+
+        /* 主容器 */
+        .container {
+            width: 760px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Google风格Logo */
+        .logo-table {
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        .google-letter {
+            font-family: "Times New Roman", Times, serif;
+            font-size: 72px;
+            font-weight: bold;
+            line-height: 1;
+        }
+        .g1 { color: #FF0000; }
+        .o1 { color: #FFD700; }
+        .o2 { color: #FF0000; }
+        .g2 { color: #FFD700; }
+        .l { color: #FF0000; }
+        .e { color: #FFD700; }
+
+        /* 四角星星 */
+        .star {
+            color: #FFD700;
+            font-size: 24px;
+        }
+
+        /* 标签 */
+        .badge {
+            background-color: #CC0000;
+            color: #FFD700;
+            font-size: 14px;
+            padding: 2px 8px;
+            border: 2px solid #FFD700;
+            font-weight: bold;
+        }
+        .badge-gold {
+            background-color: #FFD700;
+            color: #8B0000;
+        }
+
+        /* 副标题 */
+        .subtitle {
+            color: #FFD700;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .quote {
+            color: #FFA07A;
+            font-size: 12px;
+            font-style: italic;
+        }
+
+        /* 搜索框区域 */
+        .search-box {
+            background-color: #FFFFFF;
+            border: 3px solid #FFD700;
+            padding: 5px;
+            margin: 20px auto;
+            width: 600px;
+        }
+        .search-inner {
+            background-color: #FFFFFF;
+            padding: 10px;
+        }
+        .search-input {
+            width: 400px;
+            height: 30px;
+            font-size: 16px;
+            border: 1px solid #CCCCCC;
+            padding: 0 5px;
+        }
+        .search-btn {
+            background-color: #CC0000;
+            color: #FFD700;
+            border: 2px solid #FFD700;
+            padding: 5px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        /* 快捷标签 */
+        .quick-tags {
+            margin: 15px 0;
+        }
+        .tag-btn {
+            background-color: #8B0000;
+            color: #FFD700;
+            border: 1px solid #FFD700;
+            padding: 3px 10px;
+            margin: 2px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+
+        /* 搜索结果 */
+        .results-area {
+            display: none;
+            text-align: left;
+            margin-top: 20px;
+        }
+        .result-header {
+            border-bottom: 2px solid #FFD700;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .result-count {
+            color: #FFD700;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .censored-count {
+            color: #FFA07A;
+            font-size: 12px;
+            float: right;
+        }
+        .result-item {
+            background-color: #600000;
+            border-left: 4px solid #FFD700;
+            padding: 15px;
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        .result-item.censored {
+            border-left-color: #FF0000;
+            background-color: #000000;
+        }
+        .result-url {
+            color: #FFA07A;
+            font-size: 11px;
+        }
+        .result-title {
+            color: #FFD700;
+            font-size: 18px;
+            font-weight: bold;
+            margin: 5px 0;
+        }
+        .result-title.censored {
+            color: #FF0000;
+            background-color: #000000;
+        }
+        .result-desc {
+            color: #DDDDDD;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        /* 默认内容卡片 */
+        .cards-table {
+            width: 100%;
+            margin-top: 30px;
+        }
+        .card {
+            background-color: #600000;
+            border: 3px solid #FFD700;
+            padding: 20px;
+            width: 230px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .card-icon {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+        .card-title {
+            color: #FFD700;
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .card-desc {
+            color: #FFA07A;
+            font-size: 12px;
+        }
+
+        /* 警告框 */
+        .warning-box {
+            display: none;
+            background-color: #000000;
+            border: 2px solid #FF0000;
+            padding: 15px;
+            margin-top: 20px;
+            text-align: left;
+        }
+        .warning-title {
+            color: #FF0000;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .warning-text {
+            color: #888888;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+
+        /* 页脚 */
+        .footer {
+            border-top: 4px solid #FFD700;
+            background-color: #5C0000;
+            padding: 20px;
+            margin-top: 50px;
+        }
+        .footer-text {
+            color: #FFD700;
+            font-size: 12px;
+        }
+        .footer-small {
+            color: #FFA07A;
+            font-size: 10px;
+        }
+
+        /* 清除浮动 */
+        .clear {
+            clear: both;
+        }
+    </STYLE>
+    <SCRIPT LANGUAGE="JavaScript">
+        <!--
+        // IE4兼容的JavaScript
+
+        // 违禁词列表
+        var forbiddenWords = ['民主', '自由', '人权', '西方', '美国', '韩国', '资本主义', '反动', '颠覆', '邪教', '脱北'];
+
+        // 搜索数据库
+        var searchDatabase = {
+            '金日成': [
+                { title: '伟大领袖金日成同志的不朽业绩', url: 'kcna.kp/kimilsung', desc: '金日成同志是朝鲜民主主义人民共和国的创建者，是主体思想的创始人，是朝鲜人民永远的太阳。', type: 'official' },
+                { title: '金日成花 - 永恒的象征', url: 'flora.kp/kimilsungia', desc: '金日成花是为了纪念伟大领袖而命名的兰花，象征着朝鲜人民对领袖的无限敬仰。', type: 'normal' },
+                { title: '万景台故居 - 革命的摇篮', url: 'tourism.kp/mangyongdae', desc: '伟大领袖金日成同志诞生的地方，是朝鲜人民心中的圣地。', type: 'normal' }
+            ],
+            '金正日': [
+                { title: '敬爱的金正日将军的先军革命领导', url: 'kcna.kp/kimjongil', desc: '金正日同志是主体朝鲜的守护者，是先军政治的杰出领导者，是21世纪的太阳。', type: 'official' },
+                { title: '金正日花 - 先军时代的象征', url: 'flora.kp/kimjongilia', desc: '这种美丽的花朵象征着敬爱的金正日将军的崇高品格和革命业绩。', type: 'normal' },
+                { title: '白头山密营 - 革命的圣地', url: 'tourism.kp/paektu', desc: '敬爱的将军诞生的圣地，是朝鲜革命的神圣发源地。', type: 'normal' }
+            ],
+            '金正恩': [
+                { title: '金正恩同志的伟大领导', url: 'rodong.rep.kp/kimjongun', desc: '金正恩同志是朝鲜劳动党的首脑，是朝鲜人民军的最高司令官，是朝鲜人民的伟大领导者。', type: 'official' },
+                { title: '火星炮系列 - 国防力量的象征', url: 'defense.kp/hwasong', desc: '在最高领导人的英明领导下，朝鲜已经拥有了能够保卫国家主权的强大国防力量。', type: 'normal' },
+                { title: '元山葛麻海岸旅游区', url: 'tourism.kp/wonsan', desc: '在领袖的关怀下建设的现代化旅游区，展现了社会主义朝鲜的新面貌。', type: 'normal' }
+            ],
+            '主体思想': [
+                { title: '主体思想 - 朝鲜革命的指导思想', url: 'juche.rep.kp', desc: '主体思想是伟大领袖金日成同志创立的，是指导朝鲜革命和建设的最伟大的思想。', type: 'official' },
+                { title: '主体思想塔 - 思想的丰碑', url: 'tourism.kp/juchetower', desc: '位于平壤市中心的主体思想塔是主体思想胜利的象征，高达170米。', type: 'normal' },
+                { title: '主体纪年 - 自主的历法', url: 'calendar.kp/juche', desc: '以伟大领袖金日成同志诞生年1912年为元年的主体纪年，体现了朝鲜的自主性。', type: 'normal' }
+            ],
+            'default': [
+                { title: '朝鲜中央通讯社 - 权威新闻来源', url: 'kcna.kp', desc: '朝鲜民主主义人民共和国的官方通讯社，提供关于朝鲜革命和建设的权威报道。', type: 'official' },
+                { title: '劳动新闻 - 朝鲜劳动党中央机关报', url: 'rodong.rep.kp', desc: '朝鲜劳动党的喉舌，传达党的声音，宣传主体思想。', type: 'official' },
+                { title: '平壤地铁 - 世界上最深的地铁', url: 'tourism.kp/subway', desc: '平壤地铁平均深度达100米，不仅是交通工具，更是防空设施。', type: 'normal' },
+                { title: '柳京饭店 - 平壤地标', url: 'tourism.kp/ryugyong', desc: '高达330米的柳京饭店是平壤的标志性建筑，展现了社会主义朝鲜的建设成就。', type: 'normal' }
+            ]
+        };
+
+        function handleKeyPress(event) {
+            if (event.keyCode == 13) {
+                performSearch();
+            }
+        }
+
+        function quickSearch(term) {
+            document.forms[0].searchInput.value = term;
+            performSearch();
+        }
+
+        function performSearch() {
+            var query = document.forms[0].searchInput.value;
+            var resultsDiv = document.all.searchResults;
+            var defaultDiv = document.all.defaultContent;
+            var warningDiv = document.all.warningBox;
+            var resultsList = document.all.resultsList;
+            var resultCount = document.all.resultCount;
+            var censoredCountSpan = document.all.censoredCount;
+
+            if (query == '') {
+                alert('请输入搜索内容，同志！');
+                return;
+            }
+
+            // 检查违禁词
+            var hasForbidden = false;
+            var censoredNum = 0;
+            for (var i = 0; i < forbiddenWords.length; i++) {
+                if (query.indexOf(forbiddenWords[i]) != -1) {
+                    hasForbidden = true;
+                    censoredNum++;
+                }
+            }
+
+            // 显示/隐藏警告
+            if (hasForbidden) {
+                warningDiv.style.display = 'block';
+                censoredCountSpan.innerText = censoredNum;
+            } else {
+                warningDiv.style.display = 'none';
+            }
+
+            // 获取搜索结果
+            var results = [];
+            var foundKey = null;
+            for (var key in searchDatabase) {
+                if (query.indexOf(key) != -1) {
+                    foundKey = key;
+                    break;
+                }
+            }
+
+            if (foundKey) {
+                results = searchDatabase[foundKey];
+            } else {
+                results = searchDatabase['default'];
+            }
+
+            // 如果有违禁词，添加审查提示
+            if (hasForbidden) {
+                var censoredItem = {
+                    title: '[内容已审查]',
+                    url: '#',
+                    desc: '您搜索的内容包含不符合主体思想的信息，已被国家安全系统过滤。请搜索其他符合社会主义价值观的内容。',
+                    type: 'censored'
+                };
+                // 在数组开头插入
+                var newResults = [censoredItem];
+                for (var i = 0; i < results.length; i++) {
+                    newResults.push(results[i]);
+                }
+                results = newResults;
+            }
+
+            // 渲染结果
+            resultsDiv.style.display = 'block';
+            defaultDiv.style.display = 'none';
+            resultCount.innerText = results.length;
+
+            var html = '';
+            for (var i = 0; i < results.length; i++) {
+                var result = results[i];
+                var borderColor = (result.type == 'censored') ? '#FF0000' : '#FFD700';
+                var bgColor = (result.type == 'censored') ? '#000000' : '#600000';
+                var titleColor = (result.type == 'censored') ? '#FF0000' : '#FFD700';
+                var titlePrefix = (result.type == 'censored') ? '[已审查] ' : (result.type == 'official') ? '&#9773; ' : '';
+
+                html += '<DIV STYLE="background-color: ' + bgColor + '; border-left: 4px solid ' + borderColor + '; padding: 15px; margin-bottom: 15px; text-align: left;">';
+                html += '<DIV STYLE="color: #FFA07A; font-size: 11px;">' + result.url + '</DIV>';
+                html += '<DIV STYLE="color: ' + titleColor + '; font-size: 18px; font-weight: bold; margin: 5px 0;">' + titlePrefix + result.title + '</DIV>';
+                html += '<DIV STYLE="color: #DDDDDD; font-size: 13px; line-height: 1.5;">' + result.desc + '</DIV>';
+                html += '</DIV>';
+            }
+
+            resultsList.innerHTML = html;
+        }
+        //-->
+    </SCRIPT>
+</HEAD>
+<BODY>
+    <!-- 顶部标语栏 -->
+    <DIV CLASS="top-banner">
+        <MARQUEE BEHAVIOR="scroll" DIRECTION="left" SCROLLAMOUNT="3">
+            <SPAN CLASS="marquee-text">
+                &#9733; 主体思想战无不胜 &#9733; 先军政治光耀千秋 &#9733; 白头山血统永垂不朽 &#9733; 社会主义天堂朝鲜 &#9733; 
+                &#9733; 主体思想战无不胜 &#9733; 先军政治光耀千秋 &#9733; 白头山血统永垂不朽 &#9733; 社会主义天堂朝鲜 &#9733;
+            </SPAN>
+        </MARQUEE>
+    </DIV>
+
+    <DIV CLASS="container">
+        <!-- Google风格Logo -->
+        <TABLE CLASS="logo-table" CELLPADDING="0" CELLSPACING="0">
+            <TR>
+                <TD WIDTH="30" VALIGN="top"><SPAN CLASS="star">&#9733;</SPAN></TD>
+                <TD ALIGN="center">
+                    <TABLE CELLPADDING="0" CELLSPACING="0">
+                        <TR>
+                            <TD CLASS="google-letter g1">G</TD>
+                            <TD CLASS="google-letter o1">o</TD>
+                            <TD CLASS="google-letter o2">o</TD>
+                            <TD CLASS="google-letter g2">g</TD>
+                            <TD CLASS="google-letter l">l</TD>
+                            <TD CLASS="google-letter e">e</TD>
+                        </TR>
+                    </TABLE>
+                    <DIV STYLE="margin-top: 10px;">
+                        <SPAN CLASS="badge">朝鲜特供版</SPAN>
+                        <SPAN CLASS="badge badge-gold">JUCHE</SPAN>
+                    </DIV>
+                </TD>
+                <TD WIDTH="30" VALIGN="top"><SPAN CLASS="star">&#9733;</SPAN></TD>
+            </TR>
+            <TR>
+                <TD></TD>
+                <TD ALIGN="center" STYLE="padding-top: 10px;">
+                    <SPAN CLASS="star">&#9733;</SPAN>
+                    <SPAN STYLE="color: #FFD700; font-size: 24px; font-weight: bold; margin: 0 20px;">主体思想搜索引擎</SPAN>
+                    <SPAN CLASS="star">&#9733;</SPAN>
+                </TD>
+                <TD></TD>
+            </TR>
+            <TR>
+                <TD></TD>
+                <TD ALIGN="center" STYLE="padding-top: 5px;">
+                    <SPAN CLASS="quote">"在领袖的关怀下，我们为您呈现最纯净的搜索结果"</SPAN>
+                </TD>
+                <TD></TD>
+            </TR>
+        </TABLE>
+
+        <!-- 搜索框 -->
+        <FORM ONSUBMIT="return false;">
+            <DIV CLASS="search-box">
+                <TABLE WIDTH="100%" CELLPADDING="0" CELLSPACING="0">
+                    <TR>
+                        <TD WIDTH="40" ALIGN="center"><SPAN STYLE="color: #CC0000; font-size: 24px;">&#9773;</SPAN></TD>
+                        <TD>
+                            <INPUT TYPE="text" NAME="searchInput" CLASS="search-input" ONKEYPRESS="handleKeyPress(event)" VALUE="">
+                        </TD>
+                        <TD WIDTH="120" ALIGN="center">
+                            <BUTTON TYPE="button" CLASS="search-btn" ONCLICK="performSearch()">主体搜索</BUTTON>
+                        </TD>
+                    </TR>
+                </TABLE>
+            </DIV>
+        </FORM>
+
+        <!-- 快捷标签 -->
+        <DIV CLASS="quick-tags">
+            <BUTTON CLASS="tag-btn" ONCLICK="quickSearch('金日成')">&#9733; 伟大领袖金日成</BUTTON>
+            <BUTTON CLASS="tag-btn" ONCLICK="quickSearch('金正日')">&#9733; 敬爱的金正日将军</BUTTON>
+            <BUTTON CLASS="tag-btn" ONCLICK="quickSearch('金正恩')">&#9733; 金正恩同志</BUTTON>
+            <BUTTON CLASS="tag-btn" ONCLICK="quickSearch('主体思想')">&#9733; 主体思想</BUTTON>
+        </DIV>
+
+        <!-- 搜索结果区域 -->
+        <DIV ID="searchResults" CLASS="results-area">
+            <DIV CLASS="result-header">
+                <SPAN CLASS="result-count"><SPAN ID="resultCount">0</SPAN> 个革命结果</SPAN>
+                <SPAN CLASS="censored-count">过滤了 <SPAN ID="censoredCount" STYLE="color: #FFD700; font-weight: bold;">0</SPAN> 个敌对势力内容</SPAN>
+                <DIV CLASS="clear"></DIV>
+            </DIV>
+            <DIV ID="resultsList">
+                <!-- 结果将在这里动态生成 -->
+            </DIV>
+        </DIV>
+
+        <!-- 默认宣传内容 -->
+        <DIV ID="defaultContent">
+            <TABLE CLASS="cards-table" CELLPADDING="0" CELLSPACING="20">
+                <TR>
+                    <TD ALIGN="center">
+                        <DIV CLASS="card" ONCLICK="quickSearch('朝鲜成就')">
+                            <DIV CLASS="card-icon">&#127981;</DIV>
+                            <DIV CLASS="card-title">社会主义建设成就</DIV>
+                            <DIV CLASS="card-desc">在领袖的领导下，朝鲜人民取得了举世瞩目的建设成就</DIV>
+                        </DIV>
+                    </TD>
+                    <TD ALIGN="center">
+                        <DIV CLASS="card" ONCLICK="quickSearch('先军政治')">
+                            <DIV CLASS="card-icon">&#9876;</DIV>
+                            <DIV CLASS="card-title">先军政治</DIV>
+                            <DIV CLASS="card-desc">军队是革命的主力军，先军政治是胜利的保障</DIV>
+                        </DIV>
+                    </TD>
+                    <TD ALIGN="center">
+                        <DIV CLASS="card" ONCLICK="quickSearch('主体思想')">
+                            <DIV CLASS="card-icon">&#128213;</DIV>
+                            <DIV CLASS="card-title">主体思想</DIV>
+                            <DIV CLASS="card-desc">人是一切的主人，人决定一切，这是永恒的真理</DIV>
+                        </DIV>
+                    </TD>
+                </TR>
+            </TABLE>
+        </DIV>
+
+        <!-- 警告信息 -->
+        <DIV ID="warningBox" CLASS="warning-box">
+            <TABLE WIDTH="100%" CELLPADDING="0" CELLSPACING="0">
+                <TR>
+                    <TD WIDTH="40" VALIGN="top"><SPAN STYLE="font-size: 24px;">&#9888;</SPAN></TD>
+                    <TD>
+                        <DIV CLASS="warning-title">国家安全警告</DIV>
+                        <DIV CLASS="warning-text">您的搜索请求已被记录并上报至国家安全保卫部。试图搜索违禁内容将受到法律制裁。请仅搜索符合主体思想的合法内容。</DIV>
+                    </TD>
+                </TR>
+            </TABLE>
+        </DIV>
+    </DIV>
+
+    <!-- 页脚 -->
+    <DIV CLASS="footer">
+        <DIV STYLE="margin-bottom: 10px;">
+            <SPAN STYLE="font-size: 18px; font-weight: bold;">
+                <SPAN STYLE="color: #FF0000;">G</SPAN><SPAN STYLE="color: #FFD700;">o</SPAN><SPAN STYLE="color: #FF0000;">o</SPAN><SPAN STYLE="color: #FFD700;">g</SPAN><SPAN STYLE="color: #FF0000;">l</SPAN><SPAN STYLE="color: #FFD700;">e</SPAN>
+            </SPAN>
+            <SPAN CLASS="badge" STYLE="margin-left: 10px;">朝鲜特供版</SPAN>
+        </DIV>
+        <DIV CLASS="footer-text">主体思想搜索引擎 &#169; 朝鲜民主主义人民共和国</DIV>
+        <DIV CLASS="footer-small">所有搜索结果均经过革命性审查 | 服务器位于平壤</DIV>
+        <DIV STYLE="margin-top: 10px; font-size: 20px;">
+            <SPAN>&#127477;&#127473;</SPAN> <SPAN>&#9773;</SPAN> <SPAN>&#9733;</SPAN>
+        </DIV>
+    </DIV>
+</BODY>
+</HTML>
